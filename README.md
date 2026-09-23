@@ -38,7 +38,13 @@ The **unit disk** ($\mathbb{D} = \{z \in \mathbb{C} : \vert{}z\vert{} < 1\}$) pl
 
 ## 🛠️ Repository Contents
 
-* `TFG_Mobius_Transformations.pdf` — Full text of the thesis (in Catalan).
+```text
+.
+├── Bachelor_Thesis_Mobius_Transformations.pdf   # Compiled PDF of the complete thesis (in Catalan)
+├── documentation/                   # LaTeX source files (.tex) for the manuscript and chapters
+├── pictures/                        # Figures and plots used in the document
+└── README.md                        # Project documentation
+```
 
 ## 👤 Author
 
@@ -50,4 +56,4 @@ The **unit disk** ($\mathbb{D} = \{z \in \mathbb{C} : \vert{}z\vert{} < 1\}$) pl
 
 * **Email:** [ivanlopez.uni@gmail.com](mailto:ivanlopez.uni@gmail.com)
 
-* **LinkedIn:** [linkedin.com/in/ivan-lópez-claramunt](https://www.linkedin.com/in/ivan-lópez-claramunt/?utm_source=gemini)
+* **LinkedIn:** [linkedin.com/in/ivan-lópez-claramunt](https://www.linkedin.com/in/ivan-lópez-claramunt)
