@@ -1,0 +1,144 @@
+% !TeX root = ../TFG_LaTeX.tex
+% =========================
+% ===== CONFIGURACIÓN =====
+% =========================
+
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+
+% Paquetes de mates
+\usepackage{mathtools, amssymb, amsthm}
+
+%Creació de entorns matemàtics (si vull una vegada estiga acabat arreglar numeració)
+\theoremstyle{definition}
+\newtheorem{definicio}{Definició}[subsection] % Definim un nou contorn de Definició, que reseteja la seua numeració cada vegada que apareix una funció.
+\newtheorem*{exemple}{Exemple} % Definim un nou contorn de Exemple, que no gasta numeració (*).
+\newtheorem*{exemples}{Exemples} % Definim un nou contorn de Exemples, que no gasta numeració (*).
+\newtheorem{nota}[definicio]{Nota} %  Definim un nou contorn de Nota, que no gasta numeració (*).
+
+\theoremstyle{definition}
+\newtheorem{teorema}[definicio]{Teorema} % Definim un nou contorn de Teorema, que gasta la mateixa numeració que Definició.
+\theoremstyle{definition}
+\newtheorem{corolari}[definicio]{Corol·lari} % Definim un nou contorn de Corol·lari, que gasta la mateixa numeració que Definició.
+\theoremstyle{definition}
+\newtheorem{proposicio}[definicio]{Proposició} % Definim un nou contorn de Teorema, que gasta la mateixa numeració que Definició.
+\newtheorem{lema}[definicio]{Lema}
+
+\theoremstyle{remark}
+
+%Per a que les equacions vagen numerades amb les seccions
+\numberwithin{equation}{section}
+
+% Paquets relacionats amb imatges.
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{epstopdf}
+
+% Paquet per a personalitzar els títols i les seccions 
+\usepackage{titlesec}
+
+% Paquet per a tachar coses
+\usepackage{cancel} 
+
+% Profundidad de numeración y de índice
+\setcounter{secnumdepth}{4}  % hasta \paragraph
+\setcounter{tocdepth}{4}     % hasta \paragraph en el índice
+
+% --- Numeración jerárquica ---
+% (por si tu clase no lo hace ya así por defecto)
+\renewcommand\theparagraph{\thesubsubsection.\arabic{paragraph}}
+% Si también usas subparagraph:
+% \renewcommand\thesubparagraph{\theparagraph.\arabic{subparagraph}}
+
+% Paquets per a poder quadrar bé el text
+\usepackage{float}
+\usepackage{parskip}
+
+% Paquets per a personalitzar el document.
+\usepackage{xcolor}
+\usepackage{enumerate}
+\usepackage[left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm]{geometry}
+
+% Configuració per a els encapçalaments
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\fancyhead[L]{\nouppercase{\rightmark}} % sección actual
+\fancyfoot[C]{\thepage} % número de página
+
+\setlength{\headheight}{16pt}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\sectionmark}[1]{\markright{\textsc{#1}}}
+
+
+\usepackage{changepage} % Para el adjustwidth
+
+% Secciones sin sangría extra
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection}{1em}{}
+
+  % --- Formato visual de paragraph como “mini sección” ---
+\titleformat{\paragraph}
+  {\normalfont\normalsize\bfseries} % estilo
+  {\theparagraph}                   % muestra el número (1.1.1.1)
+  {1em}                             % espacio entre número y título
+  {}                                % código antes del título
+\titlespacing*{\paragraph}
+  {0pt}{1.5ex plus .2ex minus .2ex}{1ex} % espaciado vertical
+
+\titlespacing*{\subsection}
+{0pt}        % sin sangría
+{3.5ex}      % espacio antes
+{4ex}        % espacio después
+
+% Per a que encete pàgina en cada secció
+\let\oldsection\section
+\renewcommand{\section}{\newpage\oldsection}
+
+\usepackage{listings} %per a poder introduir codi
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1}
+\definecolor{codeblue}{rgb}{0,0.2,1}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle} %per a determinar quin estil vaig a utilitzar
+
+% Paquet per a fer referències.
+
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+%\hypersetup{colorlinks = true, linkcolor = [RGB]{100, 200, 32}} % Per a que les referències tinguen un determinat color
+
+\usepackage{xurl}
+
+\usepackage{caption}
+
+% ===== FIN CONFIGURACIÓN =====

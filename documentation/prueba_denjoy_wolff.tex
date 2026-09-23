@@ -1,0 +1,48 @@
+
+\noindent 
+ 
+Primero es necesario el Teorema de Vitali (puedes encontrarlo como consecuencia del Teorema de Montel en el 2.9 del libro de Conway de Complex Analysis: \medskip
+
+\noindent \textbf{Teorema de Vitali.} Sea $U \subseteq \mathbb{C}$ un dominio abierto y sea $\{f_n\}$ una sucesión de funciones holomorfas en $U$. Si la sucesión $\{f_n\}$ está localmente acotada en $U$ (es decir, acotada uniformemente sobre cada subconjunto compacto de $U$) y converge puntualmente en $U$ a una función $f$, entonces la sucesión $\{f_n\}$ converge a $f$ uniformemente sobre cualquier subconjunto compacto de $U$ (y, por tanto, la función límite $f$ es holomorfa en $U$). \bigskip
+
+\noindent \textbf{Prueba Denjoy-Wolff para $T \in TM(\D)$ no automorfismos} \medskip
+
+ Consideramos $T$ una transformación de Möbius tal que $T(\D) \subset \D$ que no es un automorfismo. Como $T$ es una transformación de Möbius, su único polo (donde el denominador se anula) debe estar estrictamente fuera del disco cerrado $\bar{\D}$ (de lo contrario, la imagen de $\D$ sería no acotada). Por lo tanto, $T$ es holomorfa en un entorno de $\bar{\D}$ y, en consecuencia, se extiende de manera continua y analítica a $\bar{\D}$.
+ 
+Como no es un automorfismo, la imagen de la frontera $C := T(\partial \D)$ es una circunferencia contenida en el disco cerrado $\bar{\D}$ que no puede ser idéntica a $\partial \D$. Dado que $T$ es inyectiva en la esfera de Riemann, si tuviésemos $T(\D) = \D$, entonces $T$ restringido al disco sería un automorfismo de $\D$. Al no serlo, se tiene necesariamente que $T(\D) \subsetneq \D$. Por el Teorema del Punto Fijo de Brouwer, al ser $\bar{\D}$ un compacto convexo y $T$ continua en él, existe al menos un punto fijo $p \in \bar{\D}$ tal que $T(p)=p$.
+
+\medskip
+
+\noindent \textbf{1. Si $T$ tiene un punto fijo en $\D$}
+
+\medskip 
+
+\noindent Sea $p$ el punto fijo de $\D$ y consideramos $\phi_p$ el automorfismo que intercambia $p$ con $0$ ($\phi_p(p)=0$ y $\phi_p(0)=p$). Definimos $S=\phi_p^{-1} \circ T \circ \phi_p$, que cumple $S(0)=0$. Como $T$ no es un automorfismo, la función holomorfa $S: \D \to \D$ tampoco lo es. Aplicando el Lema de Schwarz, se tiene que $|S(w)| < |w|$ para todo $w \in \D\setminus\{0\}$.
+
+Entonces, $r_n=|S^n(w)|$ es una sucesión estrictamente decreciente $r_{n+1} < r_n$ (asumiendo $S^n(w) \neq 0$, caso en el que la convergencia es trivial) y acotada inferiormente por $0$, por lo que es convergente a un límite $\ell \geq 0$. Veamos que $\ell=0$. Si no lo fuera, dado que la órbita $(S^n(w))$ está contenida en el disco cerrado centrado en $0$ y de radio $|w|$, el cual es un compacto estrictamente contenido en $\D$ (ya que $|w| < 1$), existe una subsucesión $(S^{n_k}(w))$ que converge a cierto $u \in \D$ tal que $|u| = \ell$.
+
+Por continuidad, la subsucesión desplazada $(S^{n_k+1}(w))$ converge a $S(u)$ y, tomando módulos, tenemos que $|S(u)|=\ell$. Sin embargo, al ser $\ell > 0$ se tiene $u \neq 0$, por lo que el Lema de Schwarz exige que $|S(u)| < |u| = \ell$, lo que resultaría en la contradicción $\ell < \ell$. Por lo tanto, $\ell=0$, lo que demuestra que $S^n(w) \to 0$ y, por consiguiente, $T^n(z) \to \phi_p(0) = p$. Por el Teorema de Vitali, esta convergencia es uniforme en los compactos de $\D$.
+
+\medskip
+
+\noindent \textbf{2. Si $T$ no tiene puntos fijos en $\D$}
+
+\medskip 
+
+En este caso, el punto fijo garantizado por Brouwer debe estar en la frontera, $p \in \partial \D$. Notemos primero que la circunferencia $C = T(\partial \D)$ está contenida en $\bar{\D}$ y pasa por $T(p)=p \in \partial \D$. Al ser la intersección de dos circunferencias distintas de las cuales una está contenida en el disco cerrado de la otra, el punto común $p$ es su único punto de contacto (punto de tangencia), por lo que $C \cap \partial \D = \{p\}$. Esto demuestra, además, que $p$ es el único punto fijo de la frontera.
+
+Llamamos $E$ al conjunto de puntos de acumulación de la sucesión $(T^n(z))$ para cualquier $z \in \D$. Como $\bar{\D}$ es compacto, $E$ es no vacío y por continuidad se cumple que $T(E) \subseteq E$. 
+
+\begin{itemize}
+    \item Veamos que $E \subseteq \partial \D$: Por el Lema de Schwarz-Pick, $d_n := \rho(T^n(z), T^{n+1}(z))$ es estrictamente decreciente y converge a un límite $\ell \geq 0$. Si existiera un punto de acumulación $u \in E \cap \D$, la continuidad de $\rho$ exigiría que $\rho(u, T(u)) = \ell$ y que $\rho(T(u), T^2(u)) = \ell$. Por la contracción estricta de Schwarz-Pick, esto solo es posible si $u = T(u)$, lo que contradice la hipótesis de que no hay puntos fijos en el interior del disco. Por tanto, $E \subseteq \partial \D$.
+\end{itemize}
+
+Dado que $E \subseteq \partial \D$, se tiene que $T(E) \subseteq T(\partial \D) = C$. Usando la invarianza de $E$, deducimos que:
+\[
+T(E) \subseteq C \cap E \subseteq C \cap \partial \D = \{p\}
+\]
+
+Puesto que $E$ es no vacío, $T(p) = p$ y la aplicación $T$ es inyectiva en $\bar{\D}$, el único elemento que puede pertenecer a $E$ es el propio $p$ (es decir, si $T(w) = p$, entonces $w = p$). Esto obliga a que $E = \{p\}$.
+
+Al ser $p$ el único punto de acumulación de la órbita en el compacto $\bar{\D}$, la sucesión completa $T^n(z)$ converge puntualmente a $p$. Por el Teorema de Vitali, obtenemos que $T^n$ converge a $p$ uniformemente en los compactos de $\D$.
+\end{document}

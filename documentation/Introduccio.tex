@@ -1,0 +1,80 @@
+% !TeX root = ../TFG_LaTeX.tex
+\section{Introducció}
+
+\begin{adjustwidth}{1cm}{1cm}
+
+Aquest treball s'engloba en el marc de l'anàlisi complexa, una branca clàssica de les matemàtiques en què la geometria i l'anàlisi s'entrellacen de manera natural a través de l'estudi de les funcions holomorfes. Una de les propietats més notables d'aquestes funcions és que, sota hipòtesis adequades, conserven localment els angles i l'orientació. Açò dona lloc al concepte d'aplicació conforme, i posteriorment de transformació conforme, que permet traslladar problemes geomètrics definits en dominis complexos a altres dominis més senzills d'estudiar.
+
+Un dels resultats fonamentals en aquesta direcció és el Teorema de l'Aplicació de Riemann, que assegura que tot domini obert simplement connex del pla complex, diferent del propi pla, és conformement equivalent al disc unitat. Aquest resultat situa el disc unitat com un conjunt molt important dins de l'anàlisi complexa, i justifica l'interés d'estudiar amb detall les aplicacions holomorfes que actuen sobre ell. En aquest context, les transformacions de Möbius apareixen com una família especialment important d'aplicacions conformes: són els automorfismes conformes de l'esfera de Riemann i, mitjançant certes restriccions sobre els seus coeficients, també descriuen els automorfismes del disc unitat. Tot i això, en aquest treball no es tracta el Teorema de l'Aplicació de Riemann, sinò que es centra en les transformacions de Möbius amb el disc unitat com un actor fonamental.
+
+Les transformacions de Möbius, també anomenades funcions lineals fraccionàries, tenen la forma
+\[
+T(z)=\frac{az+b}{cz+d}, \qquad ad-bc\neq 0,
+\]
+i admeten una interpretació algebraica natural mitjançant el grup projectiu $PGL(2,\mathbb{C})$. Aquesta connexió mostra que no es tracta únicament d'una família concreta de funcions, sinó d'un objecte amb una estructura de grup molt rica. Al mateix temps, aquestes transformacions tenen una forta component geomètrica, ja que envien rectes i circumferències de l'esfera de Riemann en rectes i circumferències, i permeten descriure de manera explícita moltes simetries del pla complex ampliat.
+
+Quan restringim l'estudi al disc unitat, les transformacions de Möbius permeten entendre millor la geometria pròpia d'aquest domini. En particular, els automorfismes del disc preserven la mètrica pseudohiperbòlica i actuen com a isometries de la geometria hiperbòlica del disc. Aquesta perspectiva proporciona una manera natural d'estudiar les aplicacions holomorfes del disc en si mateix, no només des del punt de vista analític, sinó també des del punt de vista geomètric.
+
+Per aprofundir en aquest comportament, el Lema de Schwarz i la seua generalització, el Lema de Schwarz-Pick, són eines fonamentals. Aquests resultats estableixen propietats de contracció per a les funcions holomorfes del disc unitat en si mateix. En particular, el Lema de Schwarz-Pick mostra que aquestes funcions no augmenten la distància pseudohiperbòlica, fet que dona una interpretació geomètrica molt clara del comportament de les aplicacions holomorfes del disc.
+
+Aquesta visió condueix de manera natural a l'estudi dinàmic de les iterades d'una funció. Donada una aplicació holomorfa $f:\mathbb{D}\to\mathbb{D}$, podem considerar la successió
+\[
+f, \quad f^2=f\circ f, \quad f^3=f\circ f\circ f, \quad \ldots
+\]
+i preguntar-nos quin és el comportament asimptòtic de les òrbites dels punts del disc. En aquest marc apareix el Teorema de Denjoy-Wolff, que descriu de manera precisa i elegant el comportament asimptòtic de les iterades d'una funció holomorfa del disc unitat en si mateix, sota certes hipòtesis. Aquest teorema afirma, en essència, que existeix un punt atractor, situat dins del disc o en la seua frontera, cap al qual convergeixen les òrbites, és a dir, les iterades de la funció.
+
+En aquest treball estudiarem aquest fenomen en el cas particular de les transformacions de Möbius que envien el disc unitat en si mateix. Aquest cas és especialment interessant perquè permet obtenir demostracions explícites i constructives, basades en càlculs algebraics, punts fixos i conjugacions adequades. Així, les transformacions de Möbius proporcionen un entorn controlat en què la dinàmica global pot ser classificada i descrita amb precisió.
+
+\subsection{Motivació}
+
+La teoria de les transformacions conformes és una de les àrees més riques de l'anàlisi complexa, ja que permet estudiar propietats geomètriques globals a partir de propietats analítiques locals, perquè una funció holomorfa amb derivada no nul·la es comporta localment com una rotació seguida d'una dilatació. Així, conserva els angles i l'orientació en entorns xicotets, i aquesta informació local, juntament amb la rigidesa característica de les funcions holomorfes, permet deduir com es transformen globalment corbes, dominis i fronteres. Dins d'aquest camp, l'estudi de les transformacions de Möbius i de la seua dinàmica troba la seua motivació en diversos aspectes fonamentals:
+
+\begin{itemize}
+\item \textbf{La connexió entre àlgebra, anàlisi i geometria.} Les transformacions de Möbius constitueixen un exemple especialment elegant de com diferents branques de les matemàtiques es relacionen de manera natural. La seua definició algebraica està vinculada al grup $PGL(2,\mathbb{C})$; la seua naturalesa holomorfa les situa dins de l'anàlisi complexa; i les seues propietats geomètriques permeten estudiar com es transformen certs conjunts de $\mathbb{C}$.
+
+\item \textbf{El paper central del disc unitat.} El Teorema de l'Aplicació de Riemann mostra que el disc unitat és un domini model dins de l'anàlisi complexa. Per això, comprendre les aplicacions holomorfes del disc en si mateix, i en particular els seus automorfismes, és essencial per a entendre molts fenòmens generals de la teoria de funcions.
+
+\item \textbf{La geometria pseudohiperbòlica.} El Lema de Schwarz-Pick mostra que les funcions holomorfes del disc unitat en si mateix són contraccions respecte de la mètrica pseudohiperbòlica. Aquest fet dona una interpretació geomètrica profunda a resultats que, en principi, són analítics. En particular, els automorfismes del disc apareixen com les aplicacions que preserven exactament aquesta distància.
+
+\item \textbf{L'estudi dels punts fixos.} Els punts fixos d'una transformació de Möbius determinen gran part del seu comportament global. La seua localització, dins del disc, en la frontera o fora d'ell, permet classificar les transformacions i entendre la naturalesa de les seues iterades. Així, l'estudi dels punts fixos serveix com a pont entre la geometria de la transformació i la seua dinàmica.
+
+\item \textbf{El Teorema de Denjoy-Wolff.} En sistemes dinàmics, una de les qüestions principals és predir el comportament a llarg termini de les òrbites. El Teorema de Denjoy-Wolff respon aquesta pregunta per a funcions holomorfes del disc unitat en si mateix. En el cas particular de les transformacions de Möbius, aquest resultat pot demostrar-se de manera explícita, completa i elegant, fet que permet visualitzar clarament cap a on tendeixen les iterades i quin paper exerceixen els punts fixos.
+
+\item \textbf{Un model senzill per a idees dinàmiques més generals.} Les transformacions de Möbius són una classe de funcions molt rellevant de les funcions holomorfes i prou rica per a mostrar fenòments essencials de la dinàmica complexa. Alhora, resulten més tractables amb càlculs explícits. Per això constitueixen un primer escenari natural abans d'abordar exemples més complicats, com les funcions racionals de grau superior.
+
+\item \textbf{El valor visual i geomètric de la teoria.} Molts dels resultats sobre transformacions de Möbius es poden interpretar mitjançant imatges de rectes, circumferències, discs i òrbites. Aquesta component visual fa que el tema siga especialment adequat per a combinar demostracions rigoroses amb intuïció geomètrica.
+
+\end{itemize}
+
+\subsection{Objectius del treball}
+
+L'objectiu principal d'aquest treball és presentar un estudi autocontingut, rigorós, constructiu i de caràcter geomètric de les transformacions de Möbius en el pla complex ampliat i en el disc unitat, culminant amb la demostració del Teorema de Denjoy-Wolff per al cas particular de les transformacions de Möbius que envien el disc unitat en si mateix.
+
+A diferència del cas holomorf general, en què la demostració del Teorema de Denjoy-Wolff sol requerir eines més avançades, el cas de les transformacions de Möbius es pot tractar de manera explícita. L'ús de conjugacions com a canvis de coordenades, el càlcul directe de punts fixos i la classificació geomètrica de les transformacions permeten obtenir una descripció precisa del comportament de les iterades.
+
+Per assolir aquest propòsit, es plantegen els objectius específics següents:
+
+\begin{itemize}
+\item Introduir les nocions bàsiques d'anàlisi complexa necessàries per al desenvolupament del treball, especialment conceptes relacionats amb les funcions holomorfes, les aplicacions conformes, la conservació local d'angles i els teoremes de punt fix.
+
+\item Presentar l'esfera de Riemann com una forma natural de visualitzar el pla complex ampliat i estudiar el paper que té en la definició global de les transformacions de Möbius.
+
+\item Estudiar les propietats algebraiques, geomètriques i analítiques de les transformacions de Möbius, incloent-hi, entre altres, la seua directa relació amb el grup projectiu $PGL(2,\mathbb{C})$ i el fet que transformen rectes i circumferències en rectes i circumferències.
+
+\item Caracteritzar i analitzar les transformacions de Möbius que són automorfismes del disc unitat, obtenint la seua forma explícita i analitzant el paper dels seus paràmetres.
+
+\item Introduir la mètrica pseudohiperbòlica del disc unitat i provar la seua invariància respecte dels automorfismes del disc.
+
+\item Demostrar, analitzar i interpretar el Lema de Schwarz i el Lema de Schwarz-Pick, destacant les conseqüències geomètriques i la seua relació amb la mètrica pseudohiperbòlica.
+
+\item Classificar les transformacions de Möbius segons la localització i la naturalesa dels seus punts fixos. En particular, estudiar els casos el·líptic, hiperbòlic i parabòlic per als automorfismes del disc, i relacionar-los amb el comportament de les seues iterades.
+
+\item Analitzar la dinàmica de les transformacions de Möbius que envien el disc unitat en si mateix, descrivint les òrbites dels punts i el paper del punt atractor.
+
+\item Demostrar el Teorema de Denjoy-Wolff per a transformacions de Möbius de manera constructiva, evitant l'ús d'eines més complexes i descrivint de manera precisa el comportament de convergència de les iterades en cadascun dels casos.
+
+\item Reforçar la intuïció geomètrica mitjançant exemples i representacions visuals que il·lustren l'acció de les transformacions de Möbius sobre rectes, circumferències, el disc unitat i les òrbites dels punts.
+
+\end{itemize}
+
+\end{adjustwidth}

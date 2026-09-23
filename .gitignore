@@ -1,0 +1,41 @@
+## Core LaTeX build/intermediate files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.log
+*.lot
+*.lof
+*.maf
+*.mtc
+*.mtc0
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.vrb
+
+## TeX engine/IDE generated files
+*.dvi
+*.ps
+*.pdfsync
+*~
+.*.lb
+
+## OS and Editor hidden files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
